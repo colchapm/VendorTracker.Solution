@@ -7,6 +7,7 @@
 * Git
 * C#
 * .NET 5.0
+* ASP.NET Core
 * MVC
 * MSTest
 * RESTful Routing
@@ -37,7 +38,10 @@ This is a C# MVC application for Pierre's Bakery. This application will help Pie
 
 | Behavior | Input | Output |
 |:---: |:---:|:---:|
-| The program should successfully create a Vendor object | When it instantiates a new Vendor object| Return type Vendor |
+| The program should successfully create a Vendor object | When it instantiates a new Vendor object | Return type Vendor |
+| The program should properly get the value of a property of the Vendor | When it uses a getter method | Return name of Vendor |
+| The program should successfully alter the value of a property of the Vendor | When it uses a setter method | Return updated description of the Vendor |
+| The program should successfully create a list of Vendors | When it declares a static variable to the class called _instances | Return an empty Vendor list |
 
 
 
