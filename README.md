@@ -11,6 +11,7 @@
 * Razor View Engine
 * MVC
 * MSTest
+* MSBuild
 * RESTful Routing & CRUD
 
 ## Description
