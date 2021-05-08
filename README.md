@@ -8,9 +8,10 @@
 * C#
 * .NET 5.0
 * ASP.NET Core
+* Razor View Engine
 * MVC
 * MSTest
-* RESTful Routing
+* RESTful Routing & CRUD
 
 ## Description
 
