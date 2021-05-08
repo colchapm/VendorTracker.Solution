@@ -36,6 +36,7 @@ This is a C# MVC application for Pierre's Bakery. This application will help Pie
 * _Run and launch the application with the command `$ dotnet run`_
 
 ## Specificatons
+* _Note below only lists VendorTests. OrderTests follows similar specs and outputs
 
 | Behavior | Input | Output |
 |:---: |:---:|:---:|
