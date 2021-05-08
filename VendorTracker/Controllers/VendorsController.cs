@@ -33,5 +33,12 @@ namespace VendorTracker.Controllers
       Vendor.ClearAll();
       return View();
     }
+
+    [HttpGet("/vendors/{id}")]
+    public ActionResult Show(int id)
+    {
+      Vendor foundVendor = Vendor.Find(id);
+      return View(foundVendor);
+    }
   }
 }
