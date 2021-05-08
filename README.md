@@ -51,7 +51,7 @@ This is a C# MVC application for Pierre's Bakery. This application will help Pie
 
 ## Known Bugs
 
-No known bugs at this time 
+The "clear order" button clears the vendor's order but breaks the link.
 
 ## Link
 
