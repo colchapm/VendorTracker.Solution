@@ -2,10 +2,15 @@
 
 <h3>here are all the orders for this vendor:</h3>
 
+@if (@Model["orders"].Count == 0)
+{
+  <h5>no orders have been entered yet for @Model["vendor"].Name</h5>
+}
+
 <ol>
   @foreach (Order order in @Model["orders"])
   {
-    <li><a href='vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
+    <li><a href='/vendors/@Model["vendor"].Id/orders/@order.Id'>@order.Description</a></li>
   }
 </ol>
 

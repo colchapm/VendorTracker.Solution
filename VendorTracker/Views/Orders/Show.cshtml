@@ -1,7 +1,14 @@
 <h1>Order Details: </h1>
 
-<h2>@Model["order"].Description</h2>
-<h3>Vendor: @Model["vendor"].Name</h3>
+<h2>Vendor: @Model["vendor"].Name</h2>
+<h4>Order Type: @Model["order"].Title</h4>
+<h4>Order Details: @Model["order"].Description</h4>
+<h4>Order Price: $@Model["order"].Price</h4>
+<h4>Order Date: @Model["order"].Date</h4>
 
-<a href='/vendors/@Model["vendor"].Id/orders/new'>Add another order</a>
-<a href="/vendors">View all vendors</a>
+<p><a href='/vendors/@Model["vendor"].Id/orders/new'>add another order</a></p>
+<p><a href="/vendors">view all vendors</a></p>
+
+<form action="/orders/delete" method="post">
+  <button type="submit" name="button">clear order</button>
+</form>
