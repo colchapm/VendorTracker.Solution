@@ -78,5 +78,18 @@ namespace VendorTracker.Tests
       //Assert
       CollectionAssert.AreEqual(newList, result);
     }
+
+    [TestMethod]
+    public void GetId_VendorsInstantiateWithAnIdAndGetterReturns_Int()
+    {
+      //Arange
+      Vendor newVendor = new Vendor("Red River Run Golf Club", "Vendor");
+      
+      //Act 
+      int result = newVendor.Id;
+
+      //Assert
+      Assert.AreEqual(1, result);
+    }
   }
 }
