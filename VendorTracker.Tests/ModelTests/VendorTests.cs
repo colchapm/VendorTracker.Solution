@@ -91,5 +91,19 @@ namespace VendorTracker.Tests
       //Assert
       Assert.AreEqual(1, result);
     }
+
+    [TestMethod]
+    public void Find_ReturnsCorrectVendor_Vendor()
+    {
+      //Arrange
+      Vendor newVendor1 = new Vendor("Red River Run Golf Club", "Vendor");
+      Vendor newVendor2 = new Vendor("Reed College", "Vendor");
+
+      //Act
+      Vendor result = Vendor.Find(2);
+
+      //Assert
+      Assert.AreEqual(newVendor2, result);
+    }
   }
 }
