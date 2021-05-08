@@ -1,6 +1,7 @@
 using Microsoft.AspNetCore.Mvc;
 using VendorTracker.Models;
 using System.Collections.Generic;
+using System;
 
 namespace VendorTracker.Controllers
 {
@@ -27,18 +28,29 @@ namespace VendorTracker.Controllers
       return RedirectToAction("Index");
     }
 
-    [HttpPost("/vendors/delete")]
-    public ActionResult DeleteAll()
-    {
-      Vendor.ClearAll();
-      return View();
-    }
-
     [HttpGet("/vendors/{id}")]
     public ActionResult Show(int id)
     {
-      Vendor foundVendor = Vendor.Find(id);
-      return View(foundVendor);
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor selectedVendor = Vendor.Find(id);
+      List<Order> vendorOrders = selectedVendor.Orders;
+      model.Add("vendor", selectedVendor);
+      model.Add("orders", vendorOrders);
+      return View(model);
+    }
+
+    [HttpPost("/vendors/{vendorId}/orders")]
+    public ActionResult Create(int vendorId, string orderTitle, string orderDescription, int orderPrice, string orderDate)
+    {
+      Dictionary<string, object> model = new Dictionary<string, object>();
+      Vendor foundVendor = Vendor.Find(vendorId);
+      Order newOrder = new Order(orderTitle, orderDescription, orderPrice, orderDate);
+      foundVendor.AddOrder(newOrder);
+      List<Order> vendorOrders = foundVendor.Orders;
+      model.Add("orders", vendorOrders);
+      model.Add("vendor", foundVendor);
+      return View("Show", model);
+
     }
   }
 }
