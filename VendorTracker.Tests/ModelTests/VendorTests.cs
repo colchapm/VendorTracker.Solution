@@ -39,11 +39,11 @@ namespace VendorTracker.Tests
     public void SetDescription_SetDescription_String()
     {
       //Arrange
-      string description = "weekly bread order";
+      string description = "Vendor";
       Vendor newVendor = new Vendor("test", description);
 
       //Act
-      string updatedDescription = "bi-weekly bread order";
+      string updatedDescription = "GoldVendor";
       newVendor.Description = updatedDescription;
       string result = newVendor.Description;
 
@@ -64,6 +64,19 @@ namespace VendorTracker.Tests
       CollectionAssert.AreEqual(newList, result);
     }
 
+    [TestMethod]
+    public void GetAll_ReturnsVendors_VendorList()
+    {
+      //Arrange
+      Vendor newVendor1 = new Vendor("Red River Run Golf Club", "Vendor");
+      Vendor newVendor2 = new Vendor("Reed College", "Vendor");
+      List<Vendor> newList = new List<Vendor> { newVendor1, newVendor2 };
 
+      //Act
+      List<Vendor> result = Vendor.GetAll();
+
+      //Assert
+      CollectionAssert.AreEqual(newList, result);
+    }
   }
 }

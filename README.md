@@ -42,6 +42,7 @@ This is a C# MVC application for Pierre's Bakery. This application will help Pie
 | The program should properly get the value of a property of the Vendor | When it uses a getter method | Return name of Vendor |
 | The program should successfully alter the value of a property of the Vendor | When it uses a setter method | Return updated description of the Vendor |
 | The program should successfully create a list of Vendors | When it declares a static variable to the class called _instances | Return an empty Vendor list |
+| The program should successfully create a list of Vendors | When it declares a static variable to the class called _instances | Return a list of all created Vendor objects |
 
 
 
